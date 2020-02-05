@@ -1,1 +1,4 @@
-publicPath: process.env.NODE_ENV === 'production' ? '/DungeonsDelicacy/' : '/';
+module.exports = {
+  publicPath:
+    process.env.NODE_ENV === 'production' ? '/DungeonsDelicacy/' : '/',
+};
