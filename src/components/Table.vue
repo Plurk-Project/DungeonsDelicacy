@@ -4,6 +4,7 @@
     :columns="columns"
     :paginated="true"
     :per-page="50"
+    :current-page.sync="currentPage"
   ></b-table>
 </template>
 
@@ -140,6 +141,7 @@ export default {
         visible: false,
       },
     ],
+    currentPage: 1,
   }),
   watch: {
     tab(newVal, oldVal) {
@@ -150,6 +152,7 @@ export default {
         this.$data.columns[oldColumnIndex].visible = false;
         this.$data.columns[columnIndex].visible = true;
         this.$data.data = this.getFilteredChars(newVal);
+        this.$data.currentPage = 1;
         loading.close();
       }, 1000);
     },
