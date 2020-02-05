@@ -2,18 +2,21 @@
   <div id="app">
     <Navbar />
     <Rank />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue';
 import Rank from './components/Rank.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'app',
   components: {
     Navbar,
     Rank,
+    Footer,
   },
   created() {
     const loading = this.open();

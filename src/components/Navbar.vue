@@ -5,7 +5,7 @@
         <img src="@/assets/logo.png" alt="地下城與美食" />
       </b-navbar-item>
       <b-navbar-item>
-        <h1>地下城與美食 排行榜</h1>
+        <h1><strong>地下城與美食 排行榜</strong></h1>
       </b-navbar-item>
     </template>
   </b-navbar>
