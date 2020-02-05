@@ -151,7 +151,7 @@ export default {
         this.$data.columns[columnIndex].visible = true;
         this.$data.data = this.getFilteredChars(newVal);
         loading.close();
-      }, 3000);
+      }, 1000);
     },
   },
   beforeMount() {
