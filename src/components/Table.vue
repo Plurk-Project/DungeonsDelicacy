@@ -149,9 +149,7 @@ export default {
         let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
         this.$data.columns[oldColumnIndex].visible = false;
         this.$data.columns[columnIndex].visible = true;
-        let chars = this.getFilteredChars(newVal);
-        console.log(chars);
-        this.$data.data = chars;
+        this.$data.data = this.getFilteredChars(newVal);
         loading.close();
       }, 3000);
     },
