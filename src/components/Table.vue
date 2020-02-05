@@ -149,9 +149,11 @@ export default {
         let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
         this.$data.columns[oldColumnIndex].visible = false;
         this.$data.columns[columnIndex].visible = true;
-        this.$data.data = this.getFilteredChars(newVal);
+        let chars = this.getFilteredChars(newVal);
+        console.log(chars);
+        this.$data.data = chars;
         loading.close();
-      }, 1000);
+      }, 3000);
     },
   },
   beforeMount() {
@@ -175,7 +177,7 @@ export default {
       // filter
       chars = chars.filter((char) => !isNaN(parseInt(char[category])));
       // sort
-      chars = chars.sort((a, b) => a[category] < b[category]);
+      chars = chars.sort((a, b) => b[category] - a[category]);
       // add index
       for (let i = 0; i < chars.length; i++) {
         chars[i].rank = i + 1;
