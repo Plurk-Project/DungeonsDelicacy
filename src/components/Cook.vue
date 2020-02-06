@@ -14,41 +14,49 @@ const ModalForm = {
     foodIndex: 0,
     level: 1,
   }),
-  template: `
-            <form v-on:submit.prevent>
+  template: `<form v-on:submit.prevent>
               <div class="modal-card" style="width: auto">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">料理占卜</p>
+                  <p class="modal-card-title">料理占卜</p>
                 </header>
                 <section class="modal-card-body">
                   <b-field label="料理技能等級">
-                      <b-input
-                          v-model="level"
-                          type="number"
-                          :value="level"
-                          placeholder="你的料理等級"
-                          min="1"
-                          required>
-                      </b-input>
+                    <b-input
+                      icon="pot-mix"
+                      v-model="level"
+                      type="number"
+                      :value="level"
+                      placeholder="你的料理等級"
+                      min="1"
+                      required
+                    >
+                    </b-input>
                   </b-field>
 
                   <b-field label="食材">
-                    <b-select placeholder="選擇一個食材" v-model="foodIndex" expanded required>
-                      <option
-                          v-for="(food, index) in foods"
-                          :value="index"
-                          :key="index">
-                          {{ food }}
+                    <b-select
+                      placeholder="選擇一個食材"
+                      icon="food-apple"
+                      v-model="foodIndex"
+                      expanded
+                      required
+                    >
+                      <option v-for="(food, index) in foods" :value="index" :key="index">
+                        {{ food }}
                       </option>
                     </b-select>
                   </b-field>
                 </section>
                 <footer class="modal-card-foot">
-                  <button @click="$emit('show-cook', {level, food: foods[foodIndex]})" class="button is-primary">占卜</button>
+                  <button
+                    @click="$emit('show-cook', {level, food: foods[foodIndex]})"
+                    class="button is-primary"
+                  >
+                    占卜
+                  </button>
                 </footer>
               </div>
-            </form>
-        `,
+            </form>`,
 };
 
 export default {
