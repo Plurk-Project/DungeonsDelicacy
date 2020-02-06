@@ -20,7 +20,7 @@ export default {
     Rank,
     Footer,
   },
-  created() {
+  beforeMount() {
     const loading = this.open();
     fetch(
       'https://script.google.com/macros/s/AKfycbz_cw2tsupOmx-f-288ajIx3_rfOGqH9_UEQYZ52LRgS551k1Q/exec',
