@@ -11,7 +11,6 @@ import Navbar from './components/Navbar.vue';
 import Rank from './components/Rank.vue';
 import Footer from './components/Footer.vue';
 import { SnackbarProgrammatic as Snackbar } from 'buefy';
-import { NotificationProgrammatic as Notification } from 'buefy';
 
 export default {
   name: 'app',
@@ -38,14 +37,6 @@ export default {
           message: '每 8 小時自動更新一次',
           position: 'is-top',
           type: 'is-info',
-        });
-
-        Notification.open({
-          indefinite: true,
-          position: 'is-bottom',
-          type: 'is-info',
-          message:
-            '如果你找不到你的 <em>角色名稱</em><br />那可能是你的 角卡格式 <em>不正確</em> 或沒有開啟權限<br />請按照官方規格角卡並請勿更動基本資料頁面的儲存格',
         });
       });
   },

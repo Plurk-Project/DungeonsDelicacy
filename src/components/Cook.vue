@@ -35,9 +35,10 @@ const ModalForm = {
                   <b-field label="食材">
                     <b-select placeholder="選擇一個食材" v-model="food" required>
                       <option
-                          v-for="food in foods"
+                          v-for="(food, index) in foods"
                           :value="food"
-                          :key="food">
+                          :key="index"
+                          :selected="index == 0 ? 'selected': ''">
                           {{ food }}
                       </option>
                     </b-select>
