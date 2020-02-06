@@ -11,7 +11,7 @@
 const ModalForm = {
   props: ['foods'],
   data: () => ({
-    food: '',
+    foodIndex: 0,
     level: 1,
   }),
   template: `
@@ -33,19 +33,18 @@ const ModalForm = {
                   </b-field>
 
                   <b-field label="食材">
-                    <b-select placeholder="選擇一個食材" v-model="food" required>
+                    <b-select placeholder="選擇一個食材" v-model="foodIndex" expanded required>
                       <option
                           v-for="(food, index) in foods"
-                          :value="food"
-                          :key="index"
-                          :selected="index == 0 ? 'selected': ''">
+                          :value="index"
+                          :key="index">
                           {{ food }}
                       </option>
                     </b-select>
                   </b-field>
                 </section>
                 <footer class="modal-card-foot">
-                  <button @click="$emit('show-cook', {level, food})" class="button is-primary">占卜</button>
+                  <button @click="$emit('show-cook', {level, food: foods[foodIndex]})" class="button is-primary">占卜</button>
                 </footer>
               </div>
             </form>
