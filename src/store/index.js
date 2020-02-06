@@ -9,6 +9,12 @@ export default new Vuex.Store({
   state: {
     // chars: { by title }
     chars: [],
+    brokenChars: [],
+  },
+  getters: {
+    getBrokenChars(state) {
+      return state.brokenChars.map((char) => char.名稱);
+    },
   },
   mutations: {
     /**
@@ -18,14 +24,23 @@ export default new Vuex.Store({
     setChars(state, { data }) {
       const header = data.shift();
 
-      // filtering data
-      data = data.filter((list) =>
+      let filteredData = data.filter((list) =>
         list.every((x) => {
           return (!isNaN(parseInt(x)) || Boolean(x)) && x != 'undefined';
         }),
       );
 
-      const chars = data.map((list) => {
+      const brokenCharsData = data.filter((list) => list[0] == '壞');
+      const brokenChars = brokenCharsData.map((list) => {
+        let char = {};
+        for (let i = 0; i < header.length; i++) {
+          char[header[i]] = list[i];
+        }
+        return char;
+      });
+      this.state.brokenChars = brokenChars;
+
+      const chars = filteredData.map((list) => {
         let char = {};
         for (let i = 0; i < header.length; i++) {
           char[header[i]] = list[i];
