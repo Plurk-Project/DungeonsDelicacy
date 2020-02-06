@@ -127,7 +127,7 @@ export default {
       messages.push('食材經驗值: ' + exp);
       messages.push('生吃期望值: ' + raw);
       messages.push('料理期望值: ' + cooked);
-      messages.push('料理成功率: ' + rate);
+      messages.push('料理成功率: ' + parseInt(rate * 100) + '%');
       if (raw > cooked) messages.push('建議: 生吃');
       else if (raw < cooked) messages.push('建議: 熟食');
       else messages.push('建議: 都行');
