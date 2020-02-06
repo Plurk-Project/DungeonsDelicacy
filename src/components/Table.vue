@@ -144,28 +144,27 @@ export default {
     currentPage: 1,
   }),
   watch: {
-    tab(newVal, oldVal) {
-      const loading = this.open();
-      setTimeout(() => {
-        let oldColumnIndex = this.$data.tabs.indexOf(oldVal) + 2;
-        let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
-        this.$data.columns[oldColumnIndex].visible = false;
-        this.$data.columns[columnIndex].visible = true;
-        this.$data.data = this.getFilteredChars(newVal);
-        this.$data.currentPage = 1;
-        loading.close();
-      }, 1000);
+    tab: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        let delay = 1000;
+        if (oldVal === undefined) {
+          delay = 3000;
+        }
+        const loading = this.open();
+        setTimeout(() => {
+          if (oldVal != undefined) {
+            let oldColumnIndex = this.$data.tabs.indexOf(oldVal) + 2;
+            this.$data.columns[oldColumnIndex].visible = false;
+          }
+          let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
+          this.$data.columns[columnIndex].visible = true;
+          this.$data.data = this.getFilteredChars(newVal);
+          this.$data.currentPage = 1;
+          loading.close();
+        }, delay);
+      },
     },
-  },
-  beforeMount() {
-    const loading = this.open();
-    setTimeout(() => {
-      let tab = this.$props.tab;
-      let columnIndex = this.$data.tabs.indexOf(tab) + 2;
-      this.$data.columns[columnIndex].visible = true;
-      this.$data.data = this.getFilteredChars(tab);
-      loading.close();
-    }, 3000);
   },
   computed: {
     chars() {
