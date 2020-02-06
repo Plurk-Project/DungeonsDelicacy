@@ -10,6 +10,7 @@
 import Navbar from './components/Navbar.vue';
 import Rank from './components/Rank.vue';
 import Footer from './components/Footer.vue';
+import { ToastProgrammatic as Toast } from 'buefy';
 
 export default {
   name: 'app',
@@ -30,6 +31,13 @@ export default {
           this.$store.commit('setChars', { data: res.data });
         }
         loading.close();
+        Toast.open({
+          duration: 10000,
+          message:
+            '如果你找不到你的角色名稱<br />那可能是你的 角卡格式 <em>不正確</em> 或沒有開啟權限<br />請按照官方規格角卡並請勿更動基本資料頁面的儲存格',
+          position: 'is-bottom',
+          type: 'is-info',
+        });
       });
   },
   methods: {
