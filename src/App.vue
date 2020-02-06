@@ -42,6 +42,7 @@ export default {
 
         Notification.open({
           indefinite: true,
+          position: 'is-bottom',
           type: 'is-info',
           message:
             '如果你找不到你的 <em>角色名稱</em><br />那可能是你的 角卡格式 <em>不正確</em> 或沒有開啟權限<br />請按照官方規格角卡並請勿更動基本資料頁面的儲存格',
