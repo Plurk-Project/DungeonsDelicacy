@@ -157,11 +157,21 @@ export default {
             let oldColumnIndex = this.$data.tabs.indexOf(oldVal) + 2;
             this.$data.columns[oldColumnIndex].visible = false;
           }
+
+          let chars = this.getFilteredChars(newVal);
+          if (chars.length != 0) {
+            delay = 100;
+          }
+
           let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
           this.$data.columns[columnIndex].visible = true;
-          this.$data.data = this.getFilteredChars(newVal);
           this.$data.currentPage = 1;
-          loading.close();
+
+          setTimeout(() => {
+            if (chars.length == 0) chars = this.getFilteredChars(newVal);
+            this.$data.data = chars;
+            loading.close();
+          }, delay);
         }, delay);
       },
     },
