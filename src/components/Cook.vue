@@ -128,12 +128,14 @@ export default {
     cook(level = 1, hard = 1, exp = '50/80') {
       let raw = Number(exp.split('/')[0]);
       let rate = this.prob(this.cook2dice(level), hard);
-      let cooked = rate * this.getCookBonus(level) * Number(exp.split('/')[1]);
+      let successExp = this.getCookBonus(level) * Number(exp.split('/')[1]);
+      let cooked = rate * successExp;
       let messages = [];
       messages.push('料理等級: ' + level);
       messages.push('料理難度: ' + hard);
       messages.push('生吃/料理: ' + exp);
       messages.push('料理期望值: ' + cooked);
+      messages.push('料理經驗值:' + successExp);
       messages.push('料理成功率: ' + parseInt(rate * 100) + '%');
       if (raw > cooked) messages.push('建議: 生吃');
       else if (raw < cooked) messages.push('建議: 熟食');
