@@ -2,10 +2,10 @@
   <b-navbar :mobile-burger="false">
     <template slot="brand">
       <b-navbar-item>
-        <img src="@/assets/logo.png" alt="地下城與美食" />
+        <img src="@/assets/logo.png" alt="Logo" />
       </b-navbar-item>
       <b-navbar-item>
-        <h1><strong>地下城與美食 非官方 排行榜</strong></h1>
+        <h4 class="title is-4">地下城與美食 非官方 排行榜</h4>
       </b-navbar-item>
       <b-navbar-item>
         <div class="buttons">
@@ -17,6 +17,12 @@
           ></b-button>
           <Cook :foods="foods" />
         </div>
+      </b-navbar-item>
+      <b-navbar-item>
+        <b-taglist attached>
+          <b-tag type="is-dark">版本</b-tag>
+          <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
+        </b-taglist>
       </b-navbar-item>
     </template>
   </b-navbar>
@@ -34,11 +40,14 @@ export default {
   methods: {
     showBrokenChars() {
       const chars = this.$store.getters.getBrokenChars;
+      let message = `<span>第一頁一定要是 <strong>基本資料</strong><br />任何破壞格式的行為都視為格式不符</span>`;
+      message += `<br />`;
+      message += `<div class="list">${chars
+        .map(this.itemWrapper)
+        .join('')}</div>`;
       this.$buefy.dialog.alert({
         title: '角卡格式不符或沒有權限名單',
-        message: `<div class="list">${chars
-          .map(this.itemWrapper)
-          .join('')}</div>`,
+        message,
       });
     },
     itemWrapper(item) {

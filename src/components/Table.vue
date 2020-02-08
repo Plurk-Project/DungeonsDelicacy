@@ -34,6 +34,7 @@ const tabs = [
 const getField = (item) => ({
   field: item,
   label: item,
+  numeric: true,
   visible: false,
 });
 
@@ -52,6 +53,7 @@ export default {
       {
         field: '名稱',
         label: '角色名稱',
+        renderHtml: true,
       },
       ...tabs.map(getField),
     ],
@@ -106,6 +108,16 @@ export default {
       for (let i = 0; i < chars.length; i++) {
         chars[i].rank = i + 1;
       }
+      return chars;
+    },
+    getHTMLFilteredChars(category) {
+      let chars = this.getFilteredChars(category);
+      chars.map((char) => {
+        let name = char.名稱;
+        let link = char.角卡;
+        char.名稱 = `<a href="${link}">${name}</a>`;
+        return char;
+      });
       return chars;
     },
     open() {

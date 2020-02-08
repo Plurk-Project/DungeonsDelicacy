@@ -7,11 +7,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    packageVersion: process.env.PACKAGE_VERSION || '0.1.0',
     // chars: { by title }
     chars: [],
     brokenChars: [],
   },
   getters: {
+    appVersion: (state) => state.packageVersion,
     getBrokenChars(state) {
       return state.brokenChars.map((char) => char.名稱);
     },
