@@ -115,7 +115,15 @@ export default {
       chars.map((char) => {
         let name = char.名稱;
         let link = char.角卡;
-        char.名稱 = `<a href="${link}" target="_blank">${name}</a>`;
+        let plurk = char.噗浪;
+        char.名稱 = `<div class="level is-paddingless">
+          <div class="level-left">
+            <a href="${link}" target="_blank">${name}</a>
+          </div>
+          <div class="level-right">
+            <a href="${plurk}" target="_blank"><span class="icon is-small is-primary"><i class="mdi mdi-account-box"></i></span></a>
+          </div>
+        </div>`;
         return char;
       });
       return chars;
