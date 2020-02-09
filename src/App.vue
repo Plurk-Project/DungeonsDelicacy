@@ -22,7 +22,7 @@ export default {
   beforeMount() {
     const loading = this.open();
     fetch(
-      'https://script.google.com/macros/s/AKfycbz_cw2tsupOmx-f-288ajIx3_rfOGqH9_UEQYZ52LRgS551k1Q/exec',
+      'https://script.google.com/macros/s/AKfycbzbmSK_x_cGD7QonZ-yj5USYb-XrP8RR4RVwGXdOK8G1yX_52E/exec',
       { method: 'POST', body: JSON.stringify({ token: 'gogoddy' }) },
     )
       .then((res) => res.json())
