@@ -32,7 +32,7 @@ export default new Vuex.Store({
         }),
       );
 
-      const brokenCharsData = data.filter((list) => list[0] == '壞');
+      const brokenCharsData = data.filter((list) => list[0] == '異常');
       const brokenChars = brokenCharsData.map((list) => {
         let char = {};
         for (let i = 0; i < header.length; i++) {
