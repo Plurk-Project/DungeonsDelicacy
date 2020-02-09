@@ -2,14 +2,38 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>地下城與美食</strong> 由
-        <a href="https://www.plurk.com/DungeonsDelicacy">DDY地下城與美食協會</a>
-        舉辦｜<strong>排行榜</strong> 由
-        <a href="https://github.com/sheiun">SheiUn</a> 開發
-        <a href="https://github.com/sheiun/DungeonsDelicacy">原始碼</a> 採用
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a> 授權｜
-        <strong>Logo</strong> 遵照
-        <a href="https://www.plurk.com/p/no6yis">此噗</a> 的使用範圍
+        <span>
+          <strong>地下城與美食</strong> 由
+          <a href="https://www.plurk.com/DungeonsDelicacy" target="_blank">
+            DDY地下城與美食協會
+          </a>
+          舉辦
+        </span>
+        <br />
+        <span>
+          <strong>排行榜</strong> 由
+          <a href="https://github.com/sheiun" target="_blank">SheiUn</a> 開發
+        </span>
+        <br />
+        <span>
+          <a href="https://github.com/sheiun/DungeonsDelicacy" target="_blank">
+            <strong>原始碼</strong>
+          </a>
+          採用
+          <a
+            href="http://opensource.org/licenses/mit-license.php"
+            target="_blank"
+          >
+            MIT
+          </a>
+          授權
+        </span>
+        <br />
+        <span>
+          <strong>Logo</strong> 遵照
+          <a href="https://www.plurk.com/p/no6yis" target="_blank"> 此噗 </a>
+          的使用範圍
+        </span>
       </p>
     </div>
   </footer>

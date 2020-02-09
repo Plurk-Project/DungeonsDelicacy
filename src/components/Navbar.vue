@@ -19,10 +19,12 @@
         </div>
       </b-navbar-item>
       <b-navbar-item>
-        <b-taglist attached>
-          <b-tag type="is-dark">版本</b-tag>
-          <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
-        </b-taglist>
+        <a href="https://github.com/sheiun/DungeonsDelicacy" target="_blank">
+          <b-taglist attached>
+            <b-tag type="is-dark">版本</b-tag>
+            <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
+          </b-taglist>
+        </a>
       </b-navbar-item>
     </template>
   </b-navbar>

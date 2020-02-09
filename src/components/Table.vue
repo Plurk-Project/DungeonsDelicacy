@@ -115,7 +115,7 @@ export default {
       chars.map((char) => {
         let name = char.名稱;
         let link = char.角卡;
-        char.名稱 = `<a href="${link}">${name}</a>`;
+        char.名稱 = `<a href="${link}" target="_blank">${name}</a>`;
         return char;
       });
       return chars;
