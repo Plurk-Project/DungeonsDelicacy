@@ -1,10 +1,10 @@
 <template>
   <b-navbar :mobile-burger="false">
     <template slot="brand">
-      <b-navbar-item>
+      <b-navbar-item tag="div" style="vertical-align: bottom;">
         <img src="@/assets/logo.png" alt="Logo" />
       </b-navbar-item>
-      <b-navbar-item>
+      <b-navbar-item tag="div">
         <h4 class="title is-4">地下城與美食 非官方 排行榜</h4>
       </b-navbar-item>
       <b-navbar-item>
@@ -18,13 +18,14 @@
           <Cook :foods="foods" />
         </div>
       </b-navbar-item>
-      <b-navbar-item>
-        <a href="https://github.com/sheiun/DungeonsDelicacy" target="_blank">
-          <b-taglist attached>
-            <b-tag type="is-dark">版本</b-tag>
-            <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
-          </b-taglist>
-        </a>
+      <b-navbar-item
+        href="https://github.com/sheiun/DungeonsDelicacy"
+        target="_blank"
+      >
+        <b-taglist attached>
+          <b-tag type="is-dark">版本</b-tag>
+          <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
+        </b-taglist>
       </b-navbar-item>
     </template>
   </b-navbar>
