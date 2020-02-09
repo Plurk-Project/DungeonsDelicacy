@@ -74,7 +74,7 @@ export default {
             this.$data.columns[oldColumnIndex].visible = false;
           }
 
-          let chars = this.getFilteredChars(newVal);
+          let chars = this.getHTMLFilteredChars(newVal);
           if (chars.length != 0) {
             delay = 100;
           }
@@ -84,7 +84,7 @@ export default {
           this.$data.currentPage = 1;
 
           setTimeout(() => {
-            if (chars.length == 0) chars = this.getFilteredChars(newVal);
+            if (chars.length == 0) chars = this.getHTMLFilteredChars(newVal);
             this.$data.data = chars;
             loading.close();
           }, delay);

@@ -42,19 +42,19 @@ export default {
   }),
   methods: {
     showBrokenChars() {
-      const chars = this.$store.getters.getBrokenChars;
+      const chars = this.$store.getters.brokenChars;
       let message = `<span>第一頁一定要是 <strong>基本資料</strong><br />任何破壞格式的行為都視為格式不符</span>`;
       message += `<br />`;
       message += `<div class="list">${chars
-        .map(this.itemWrapper)
+        .map(this.charListWrapper)
         .join('')}</div>`;
       this.$buefy.dialog.alert({
         title: '角卡格式不符或沒有權限名單',
         message,
       });
     },
-    itemWrapper(item) {
-      return `<a class="list-item">${item}</a>`;
+    charListWrapper(char) {
+      return `<a class="list-item" href="${char.角卡}" target="_blank">${char.報名}</a>`;
     },
   },
 };

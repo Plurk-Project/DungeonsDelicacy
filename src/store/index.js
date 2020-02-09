@@ -14,9 +14,7 @@ export default new Vuex.Store({
   },
   getters: {
     appVersion: (state) => state.packageVersion,
-    getBrokenChars(state) {
-      return state.brokenChars.map((char) => char.名稱);
-    },
+    brokenChars: (state) => state.brokenChars,
   },
   mutations: {
     /**
