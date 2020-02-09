@@ -70,8 +70,8 @@ export default {
     },
 
     cardModal() {
-      const loading = this.open();
       if (this.$data.foods.length == 0) {
+        const loading = this.open();
         this.getAllFoods().then(() => {
           setTimeout(() => loading.close(), 100);
           this.showCookMenu();
