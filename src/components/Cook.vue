@@ -42,7 +42,7 @@ const ModalForm = {
                       required
                     >
                       <option v-for="(food, index) in foods" :value="index" :key="index">
-                        {{ food }}
+                        {{ food.name }}｜{{ food.hard }}｜ {{ food.exp }}
                       </option>
                     </b-select>
                   </b-field>
@@ -102,27 +102,11 @@ export default {
     /* Cook */
 
     showCook(level, food) {
-      const loading = this.open();
-      fetch(
-        `https://script.google.com/macros/s/AKfycby46PNdUSQNTidw0bktB9xd0II-MG4rK03kPHvnFlkUFTx_ek8/exec?food=${food}`,
-      )
-        .then((res) => {
-          try {
-            return res.json();
-          } catch (error) {
-            this.$buefy.toast.open(`找不到 ${food}`);
-          }
-        })
-        .then((obj) => {
-          setTimeout(() => {
-            loading.close();
-          }, 100);
-          this.$buefy.dialog.alert({
-            title: '占卜結果',
-            message: this.cook(level, obj.hard, obj.exp),
-            confirmText: '讚',
-          });
-        });
+      this.$buefy.dialog.alert({
+        title: '占卜結果',
+        message: this.cook(level, food.hard, food.exp),
+        confirmText: '讚',
+      });
     },
 
     cook(level = 1, hard = 1, exp = '50/80') {
