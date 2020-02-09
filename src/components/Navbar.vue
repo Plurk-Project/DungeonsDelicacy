@@ -23,7 +23,7 @@
         target="_blank"
       >
         <b-taglist attached>
-          <b-tag type="is-dark">版本</b-tag>
+          <b-tag type="is-light">版本</b-tag>
           <b-tag type="is-primary">{{ $store.getters.appVersion }}</b-tag>
         </b-taglist>
       </b-navbar-item>
