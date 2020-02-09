@@ -72,7 +72,7 @@ export default {
     cardModal() {
       if (this.$data.foods.length == 0) {
         const loading = this.open();
-        this.getAllFoods().then(() => {
+        this.fetchAllFoods().then(() => {
           setTimeout(() => loading.close(), 100);
           this.showCookMenu();
         });
@@ -96,7 +96,7 @@ export default {
         },
       });
     },
-    getAllFoods() {
+    fetchAllFoods() {
       return fetch(
         `https://script.google.com/macros/s/AKfycby46PNdUSQNTidw0bktB9xd0II-MG4rK03kPHvnFlkUFTx_ek8/exec`,
       )
