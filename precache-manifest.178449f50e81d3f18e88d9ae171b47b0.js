@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "255024e8c5977f6156e1",
+    "revision": "968632dfc52c1fe73bdb",
     "url": "/DungeonsDelicacy/css/app.3560af2a.css"
   },
   {
@@ -8,12 +8,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DungeonsDelicacy/img/logo.e245273b.png"
   },
   {
-    "revision": "61ef0a9ba84d1238af30b20562791f2b",
+    "revision": "c40a7ea6f30d8b953a230ae4cf85fc3b",
     "url": "/DungeonsDelicacy/index.html"
   },
   {
-    "revision": "255024e8c5977f6156e1",
-    "url": "/DungeonsDelicacy/js/app.e93d5c1b.js"
+    "revision": "968632dfc52c1fe73bdb",
+    "url": "/DungeonsDelicacy/js/app.0ffc94dc.js"
   },
   {
     "revision": "f83ab3450ae3ca03db07",
