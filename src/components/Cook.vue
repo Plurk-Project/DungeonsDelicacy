@@ -71,22 +71,29 @@ export default {
 
     cardModal() {
       const loading = this.open();
-      this.getAllFoods().then(() => {
-        setTimeout(() => loading.close(), 100);
-        this.$buefy.modal.open({
-          parent: this,
-          component: ModalForm,
-          hasModalCard: true,
-          trapFocus: true,
-          props: {
-            foods: this.$data.foods,
-          },
-          events: {
-            'show-cook': (value) => {
-              this.showCook(value.level, value.food);
-            },
-          },
+      if (this.$data.foods.length == 0) {
+        this.getAllFoods().then(() => {
+          setTimeout(() => loading.close(), 100);
+          this.showCookMenu();
         });
+      } else {
+        this.showCookMenu();
+      }
+    },
+    showCookMenu() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: ModalForm,
+        hasModalCard: true,
+        trapFocus: true,
+        props: {
+          foods: this.$data.foods,
+        },
+        events: {
+          'show-cook': (value) => {
+            this.showCook(value.level, value.food);
+          },
+        },
       });
     },
     getAllFoods() {
