@@ -51,7 +51,7 @@ export default {
         numeric: true,
       },
       {
-        field: '名稱',
+        field: '角色名稱',
         label: '角色名稱',
         renderHtml: true,
       },
@@ -74,7 +74,7 @@ export default {
             this.$data.columns[oldColumnIndex].visible = false;
           }
 
-          let chars = this.getHTMLFilteredChars(newVal);
+          let chars = this.getFilteredChars(newVal);
           if (chars.length != 0) {
             delay = 100;
           }
@@ -84,7 +84,7 @@ export default {
           this.$data.currentPage = 1;
 
           setTimeout(() => {
-            if (chars.length == 0) chars = this.getHTMLFilteredChars(newVal);
+            if (chars.length == 0) chars = this.getFilteredChars(newVal);
             this.$data.data = chars;
             loading.close();
           }, delay);
@@ -108,24 +108,6 @@ export default {
       for (let i = 0; i < chars.length; i++) {
         chars[i].rank = i + 1;
       }
-      return chars;
-    },
-    getHTMLFilteredChars(category) {
-      let chars = this.getFilteredChars(category);
-      chars.map((char) => {
-        let name = char.名稱;
-        let link = char.角卡;
-        let plurk = char.噗浪;
-        char.名稱 = `<div class="level is-paddingless">
-          <div class="level-left">
-            <a href="${link}" target="_blank">${name}</a>
-          </div>
-          <div class="level-right">
-            <a href="${plurk}" target="_blank"><span class="icon is-small is-primary"><i class="mdi mdi-account-box"></i></span></a>
-          </div>
-        </div>`;
-        return char;
-      });
       return chars;
     },
     open() {
