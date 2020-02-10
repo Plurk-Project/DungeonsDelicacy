@@ -1,6 +1,7 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const packageJson = fs.readFileSync('./package.json');
+const manifest = JSON.parse(fs.readFileSync('./public/manifest.json'));
 const version = JSON.parse(packageJson).version || 0;
 module.exports = {
   configureWebpack: {
@@ -13,11 +14,11 @@ module.exports = {
     ],
   },
   pwa: {
-    name: '地下城與美食 非官方 排行榜',
-    themeColor: '#654236',
-    msTileColor: '#000000',
+    name: manifest.name,
+    themeColor: manifest.theme_color,
+    msTileColor: manifest.background_color,
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: '#654236',
+    appleMobileWebAppStatusBarStyle: manifest.theme_color,
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
       swSrc: 'service-worker.js',
