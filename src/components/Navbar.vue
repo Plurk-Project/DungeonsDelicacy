@@ -18,6 +18,24 @@
           <Cook :foods="foods" />
         </div>
       </b-navbar-item>
+      <b-navbar-item>
+        <b-dropdown hoverable aria-role="list">
+          <button class="button is-primary tag" slot="trigger">
+            <span>連結</span>
+            <b-icon icon="menu-down"></b-icon>
+          </button>
+
+          <b-dropdown-item
+            aria-role="listitem"
+            :href="link.link"
+            target="_blank"
+            v-for="(link, index) in links"
+            :key="index"
+          >
+            {{ link.name }}
+          </b-dropdown-item>
+        </b-dropdown>
+      </b-navbar-item>
       <b-navbar-item
         href="https://github.com/sheiun/DungeonsDelicacy"
         target="_blank"
@@ -39,6 +57,22 @@ export default {
   },
   data: () => ({
     foods: [],
+    links: [
+      { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
+      { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },
+      { name: '常見問題', link: 'https://www.plurk.com/p/noo6aw' },
+      {
+        name: 'Q&A 提問',
+        link:
+          'https://docs.google.com/forms/d/1k83C8vs3mAuXvafc8Fr9lDNubi9hqwIzeIVn859DSRU/viewform?edit_requested=true',
+      },
+      {
+        name: 'Q&A 回應',
+        link:
+          'https://docs.google.com/spreadsheets/d/1xjGjAFDLLsjFapYId4AOWm95vqdB2lflTEfPabkcXQA/edit#gid=720573555',
+      },
+      { name: '玩家資源', link: 'https://www.plurk.com/p/nomukf' },
+    ],
   }),
   methods: {
     showBrokenChars() {
@@ -49,7 +83,7 @@ export default {
         .map(this.charListWrapper)
         .join('')}</div>`;
       this.$buefy.dialog.alert({
-        title: '角卡格式不符或沒有權限名單',
+        title: '角卡不符或不全或沒權限',
         message,
       });
     },
