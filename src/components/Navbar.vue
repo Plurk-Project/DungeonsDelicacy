@@ -57,6 +57,10 @@
 import Cook from './Cook.vue';
 import Statistic from './Statistic.vue';
 
+const icon = `<span class="icon is-small is-primary">
+                <i class="mdi mdi-link-variant"></i>
+              </span>`;
+
 export default {
   components: {
     Cook,
@@ -101,7 +105,7 @@ export default {
       });
     },
     charListWrapper(char) {
-      return `<a class="list-item" href="${char.角卡}" target="_blank">${char.報名}</a>`;
+      return `<a class="list-item" href="${char.角卡}" target="_blank">${char.報名}${icon}</a>`;
     },
   },
 };

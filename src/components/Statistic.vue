@@ -36,7 +36,7 @@ export default {
         props: {
           labels: this.labels,
           chartData: this.chartData,
-          cssClasses: 'has-background-light',
+          cssClasses: 'has-background-light section',
         },
         component: PieChart,
       });
