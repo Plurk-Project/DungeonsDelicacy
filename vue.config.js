@@ -13,6 +13,9 @@ module.exports = {
     ],
   },
   pwa: {
+    name: '地下城與美食 非官方 排行榜',
+    themeColor: '#654236',
+    msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: '#654236',
     workboxPluginMode: 'InjectManifest',
