@@ -15,6 +15,10 @@
             size="is-small"
             icon-left="account-remove"
           ></b-button>
+          <Statistic category="武器" icon="sword" />
+          <Statistic category="種族" icon="cat" />
+          <Statistic category="信仰" icon="bookmark-plus" />
+          <Statistic category="陣營" icon="account-group " />
           <Cook :foods="foods" />
         </div>
       </b-navbar-item>
@@ -51,9 +55,12 @@
 
 <script>
 import Cook from './Cook.vue';
+import Statistic from './Statistic.vue';
+
 export default {
   components: {
     Cook,
+    Statistic,
   },
   data: () => ({
     foods: [],
