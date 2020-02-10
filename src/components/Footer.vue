@@ -34,6 +34,13 @@
           <a href="https://www.plurk.com/p/no6yis" target="_blank"> 此噗 </a>
           的使用範圍
         </span>
+        <br />
+        <span>
+          <span>有任何問題歡迎使用 </span>
+          <a href="https://forms.gle/3CZuj7CZ7vNC9zUc8" target="_blank">
+            問題回報
+          </a>
+        </span>
       </p>
     </div>
   </footer>
