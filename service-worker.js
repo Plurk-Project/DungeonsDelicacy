@@ -1,4 +1,4 @@
-importScripts("/DungeonsDelicacy/precache-manifest.6cb96430ac8c84c7b3452caf1448dffd.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/DungeonsDelicacy/precache-manifest.565cd1cf283b9827ad29508c196ea074.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'd4' });
 
