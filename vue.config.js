@@ -12,6 +12,14 @@ module.exports = {
       }),
     ],
   },
+  pwa: {
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: '#654236',
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: 'service-worker.js',
+    },
+  },
   publicPath:
     process.env.NODE_ENV === 'production' ? '/DungeonsDelicacy/' : '/',
   runtimeCompiler: true,
