@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <b-tabs v-model="activeTab">
+      <b-tabs v-model="activeTab" position="is-centered">
         <b-tab-item v-for="tab in tabs" :key="tab" :label="tab"> </b-tab-item>
       </b-tabs>
     </section>
