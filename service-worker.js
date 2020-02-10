@@ -1,8 +1,8 @@
-importScripts("/DungeonsDelicacy/precache-manifest.45faa7a49eecc068bd70122171e12241.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/DungeonsDelicacy/precache-manifest.498a2a10910e4d82008a7c51345da00d.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'd4' });
 
-const LATEST_VERSION = '1.4.3'; //Change this value every time before you build
+const LATEST_VERSION = '1.4.4'; // TODO: change this before build auto
 
 self.addEventListener('activate', (event) => {
   console.log(`%c ${LATEST_VERSION} `, 'background: #ddd; color: #0000ff');
