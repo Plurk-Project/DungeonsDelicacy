@@ -60,6 +60,12 @@ export default {
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },
+      { name: '地下城二三事', link: 'https://www.plurk.com/p/nojfla' },
+      {
+        name: '報名名單',
+        link:
+          'https://docs.google.com/spreadsheets/d/1F1lY69prHMCPtEYIuH2TZP7EP41_f-uyNpGW0NP5AAg/edit#gid=0',
+      },
       { name: '常見問題', link: 'https://www.plurk.com/p/noo6aw' },
       {
         name: 'Q&A 提問',
