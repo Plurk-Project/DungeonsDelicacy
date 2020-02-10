@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/DungeonsDelicacy/precache-manifest.f148838a66e479f8603fde0cb797c551.js"
+  "/DungeonsDelicacy/precache-manifest.edcf38ed5829de4fc6436ff98c5639f6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ddy"});
