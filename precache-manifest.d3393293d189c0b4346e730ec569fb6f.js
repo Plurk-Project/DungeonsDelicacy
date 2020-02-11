@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ebc6fad9ed624365765",
+    "revision": "53a6e3aa0092ff3d0188",
     "url": "/DungeonsDelicacy/css/app.cd10ce3c.css"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DungeonsDelicacy/img/logo.e245273b.png"
   },
   {
-    "revision": "1441b0f3943527a2aaedf36420b89419",
+    "revision": "f40065ef63dcb476a9b163dcf8062aeb",
     "url": "/DungeonsDelicacy/index.html"
   },
   {
-    "revision": "1ebc6fad9ed624365765",
-    "url": "/DungeonsDelicacy/js/app.34287cfa.js"
+    "revision": "53a6e3aa0092ff3d0188",
+    "url": "/DungeonsDelicacy/js/app.41e8a9cb.js"
   },
   {
-    "revision": "c98f867ff550ea955db4",
-    "url": "/DungeonsDelicacy/js/chunk-vendors.649db696.js"
+    "revision": "ac0af839df16b897f132",
+    "url": "/DungeonsDelicacy/js/chunk-vendors.53389b65.js"
   },
   {
     "revision": "d73523cf4c78a95f7596ad704f9de71d",
