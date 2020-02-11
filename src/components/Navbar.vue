@@ -16,6 +16,7 @@
             icon-left="account-remove"
           ></b-button>
           <Cook :foods="foods" />
+          <Battle />
         </div>
       </b-navbar-item>
       <b-navbar-item>
@@ -68,6 +69,7 @@
 
 <script>
 import Cook from './Cook.vue';
+import Battle from './Battle.vue';
 import Statistic from './Statistic.vue';
 
 const icon = `<span class="icon is-small is-primary">
@@ -77,11 +79,12 @@ const icon = `<span class="icon is-small is-primary">
 export default {
   components: {
     Cook,
+    Battle,
     Statistic,
   },
   data: () => ({
     foods: [],
-    statistics: ['武器', '種族', '信仰', '陣營'],
+    statistics: ['性別', '武器', '種族', '信仰', '陣營'],
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },

@@ -21,16 +21,7 @@ const ModalForm = {
                 </header>
                 <section class="modal-card-body">
                   <b-field label="料理技能等級">
-                    <b-input
-                      icon="pot-mix"
-                      v-model="level"
-                      type="number"
-                      :value="level"
-                      placeholder="你的料理等級"
-                      min="1"
-                      required
-                    >
-                    </b-input>
+                    <b-numberinput icon="pot-mix" min="1" v-model="level"></b-numberinput>
                   </b-field>
 
                   <b-field label="食材">
@@ -126,7 +117,7 @@ export default {
       messages.push('料理難度: ' + hard);
       messages.push('生吃/料理: ' + exp);
       messages.push('料理期望值: ' + cooked);
-      messages.push('料理經驗值:' + successExp);
+      messages.push('料理經驗值: ' + successExp);
       messages.push('料理成功率: ' + parseInt(rate * 100) + '%');
       if (raw > cooked) messages.push('建議: 生吃');
       else if (raw < cooked) messages.push('建議: 熟食');
