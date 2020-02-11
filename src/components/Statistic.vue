@@ -1,11 +1,7 @@
 <template>
-  <b-button
-    @click="show()"
-    type="is-primary"
-    size="is-small"
-    :icon-left="$props.icon"
-  >
-  </b-button>
+  <div class="is-padding" @click="show()">
+    {{ $props.category }}
+  </div>
 </template>
 
 <script>
@@ -50,3 +46,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.is-padding {
+  padding: 0.375rem 1rem;
+}
+</style>

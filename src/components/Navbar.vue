@@ -15,12 +15,25 @@
             size="is-small"
             icon-left="account-remove"
           ></b-button>
-          <Statistic category="武器" icon="sword" />
-          <Statistic category="種族" icon="cat" />
-          <Statistic category="信仰" icon="bookmark-plus" />
-          <Statistic category="陣營" icon="account-group " />
           <Cook :foods="foods" />
         </div>
+      </b-navbar-item>
+      <b-navbar-item>
+        <b-dropdown hoverable aria-role="list">
+          <button class="button is-primary tag" slot="trigger">
+            <span>統計</span>
+            <b-icon icon="menu-down"></b-icon>
+          </button>
+
+          <b-dropdown-item
+            paddingless
+            aria-role="listitem"
+            v-for="(category, index) in statistics"
+            :key="index"
+          >
+            <Statistic :category="category" />
+          </b-dropdown-item>
+        </b-dropdown>
       </b-navbar-item>
       <b-navbar-item>
         <b-dropdown hoverable aria-role="list">
@@ -68,6 +81,7 @@ export default {
   },
   data: () => ({
     foods: [],
+    statistics: ['武器', '種族', '信仰', '陣營'],
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },
