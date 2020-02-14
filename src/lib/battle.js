@@ -149,5 +149,5 @@ export const createEntity = (
 
 function demo() {
   let winRate = calcWinRate(chars, monsters);
-  console.log(Math.round(winRate * 100, 2) + '%');
+  // console.log(Math.round(winRate * 100, 2) + '%');
 }

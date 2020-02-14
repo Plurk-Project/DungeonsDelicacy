@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import Buefy from 'buefy';
 import Vuex from 'vuex';
+import VueClipboard from 'vue-clipboard2';
 
 Vue.use(Buefy);
 Vue.use(Vuex);
+VueClipboard.config.autoSetContainer = true;
+Vue.use(VueClipboard);
 
 export default new Vuex.Store({
   state: {

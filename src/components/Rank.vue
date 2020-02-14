@@ -17,7 +17,7 @@
 
 <script>
 import Table from './Table.vue';
-import { attributes } from '../lib/data';
+import { attrs } from '../lib/data';
 
 export default {
   name: 'rank',
@@ -26,7 +26,7 @@ export default {
   },
   data: () => ({
     activeTab: 0,
-    tabs: attributes,
+    tabs: attrs,
   }),
   methods: {
     getActiveTabName() {

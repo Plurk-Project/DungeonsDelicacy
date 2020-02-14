@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { attributes } from '../lib/data';
+import { attrs } from '../lib/data';
 
 const getField = (item) => ({
   field: item,
@@ -21,7 +21,7 @@ const getField = (item) => ({
 export default {
   props: ['tab'],
   data: () => ({
-    tabs: attributes,
+    tabs: attrs,
     currentChars: [],
     columns: [
       {
@@ -35,7 +35,7 @@ export default {
         label: '角色名稱',
         renderHtml: true,
       },
-      ...attributes.map(getField),
+      ...attrs.map(getField),
     ],
     currentPage: 1,
   }),
