@@ -134,7 +134,7 @@ const ModalForm = {
       <p class="modal-card-title">戰力分析</p>
     </header>
     <section class="modal-card-body">
-      <b-field label="玩家人數">
+      <b-field label="成員人數">
         <b-numberinput v-model="playerCount" min="1" max="6"></b-numberinput>
       </b-field>
       <b-field :label="'隊員 ' + n" v-for="(n, index) in playerCount" :key="index">
@@ -142,6 +142,7 @@ const ModalForm = {
           v-model="names[index]"
           :data="filteredChars"
           icon="account"
+          placeholder="這裡可以打字"
           field="名稱"
           @focus="focusIndex = index"
           open-on-focus

@@ -92,6 +92,7 @@ export default {
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },
       { name: '鍛造噗', link: 'https://www.plurk.com/p/noqcmc' },
+      { name: '鑑定噗', link: 'https://www.plurk.com/p/norn6m' },
       { name: '地下城二三事', link: 'https://www.plurk.com/p/nojfla' },
       {
         name: '報名名單',
