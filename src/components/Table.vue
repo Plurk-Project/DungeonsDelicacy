@@ -1,6 +1,6 @@
 <template>
   <b-table
-    :data="data"
+    :data="currentChars"
     :columns="columns"
     :paginated="true"
     :per-page="50"
@@ -9,27 +9,7 @@
 </template>
 
 <script>
-const tabs = [
-  '經驗',
-  '身高',
-  '體重',
-  '體力',
-  '金錢',
-  '命中',
-  '傷害',
-  '防禦',
-  '迴避',
-  '法傷',
-  '治療',
-  '料理',
-  '採集',
-  '體能',
-  '偵查',
-  '鑑定',
-  '鍛造',
-  '開鎖',
-  '扒竊',
-];
+import { attributes } from '../lib/data';
 
 const getField = (item) => ({
   field: item,
@@ -41,8 +21,8 @@ const getField = (item) => ({
 export default {
   props: ['tab'],
   data: () => ({
-    tabs,
-    data: [],
+    tabs: attributes,
+    currentChars: [],
     columns: [
       {
         field: 'rank',
@@ -55,7 +35,7 @@ export default {
         label: '角色名稱',
         renderHtml: true,
       },
-      ...tabs.map(getField),
+      ...attributes.map(getField),
     ],
     currentPage: 1,
   }),
@@ -70,8 +50,8 @@ export default {
         const loading = this.open();
         setTimeout(() => {
           if (oldVal != undefined) {
-            let oldColumnIndex = this.$data.tabs.indexOf(oldVal) + 2;
-            this.$data.columns[oldColumnIndex].visible = false;
+            let oldColumnIndex = this.tabs.indexOf(oldVal) + 2;
+            this.columns[oldColumnIndex].visible = false;
           }
 
           let chars = this.getFilteredChars(newVal);
@@ -79,13 +59,13 @@ export default {
             delay = 100;
           }
 
-          let columnIndex = this.$data.tabs.indexOf(newVal) + 2;
-          this.$data.columns[columnIndex].visible = true;
-          this.$data.currentPage = 1;
+          let columnIndex = this.tabs.indexOf(newVal) + 2;
+          this.columns[columnIndex].visible = true;
+          this.currentPage = 1;
 
           setTimeout(() => {
             if (chars.length == 0) chars = this.getFilteredChars(newVal);
-            this.$data.data = chars;
+            this.currentChars = chars;
             loading.close();
           }, delay);
         }, delay);

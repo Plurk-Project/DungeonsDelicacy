@@ -17,6 +17,7 @@
 
 <script>
 import Table from './Table.vue';
+import { attributes } from '../lib/data';
 
 export default {
   name: 'rank',
@@ -25,31 +26,11 @@ export default {
   },
   data: () => ({
     activeTab: 0,
-    tabs: [
-      '經驗',
-      '身高',
-      '體重',
-      '體力',
-      '金錢',
-      '命中',
-      '傷害',
-      '防禦',
-      '迴避',
-      '法傷',
-      '治療',
-      '料理',
-      '採集',
-      '體能',
-      '偵查',
-      '鑑定',
-      '鍛造',
-      '開鎖',
-      '扒竊',
-    ],
+    tabs: attributes,
   }),
   methods: {
     getActiveTabName() {
-      return this.$data.tabs[this.$data.activeTab];
+      return this.tabs[this.activeTab];
     },
   },
 };

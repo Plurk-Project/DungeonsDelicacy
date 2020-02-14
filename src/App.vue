@@ -115,4 +115,8 @@ $link-focus-border: $primary;
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
+
+.is-padding {
+  padding: 0.375rem 1rem;
+}
 </style>

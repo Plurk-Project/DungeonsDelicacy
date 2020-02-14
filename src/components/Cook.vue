@@ -1,6 +1,6 @@
 <template>
   <b-button
-    @click="cardModal()"
+    @click="show()"
     type="is-primary"
     size="is-small"
     icon-left="pot-mix"
@@ -17,7 +17,6 @@ const ModalForm = {
     level: 1,
   }),
   template: `
-<form v-on:submit.prevent>
   <div class="modal-card" style="width: auto">
     <header class="modal-card-head">
       <p class="modal-card-title">料理占卜</p>
@@ -49,8 +48,7 @@ const ModalForm = {
         占卜
       </button>
     </footer>
-  </div>
-</form>`,
+  </div>`,
 };
 
 export default {
@@ -63,8 +61,8 @@ export default {
       return loadingComponent;
     },
 
-    cardModal() {
-      if (this.$data.foods.length == 0) {
+    show() {
+      if (this.foods.length == 0) {
         const loading = this.open();
         this.fetchAllFoods().then(() => {
           setTimeout(() => loading.close(), 100);
@@ -81,7 +79,7 @@ export default {
         hasModalCard: true,
         trapFocus: true,
         props: {
-          foods: this.$data.foods,
+          foods: this.foods,
         },
         events: {
           'show-cook': (value) => {
@@ -96,7 +94,7 @@ export default {
       )
         .then((res) => res.json())
         .then((obj) => {
-          this.$data.foods = obj.data;
+          this.foods = obj.data;
         });
     },
 

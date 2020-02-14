@@ -1,6 +1,6 @@
 <template>
   <b-button
-    @click="showBattle()"
+    @click="show()"
     type="is-primary"
     size="is-small"
     icon-left="sword-cross"
@@ -49,8 +49,8 @@ const ModalForm = {
       let type = 'is-primary';
       try {
         let winRate = calcWinRate(
-          this.$data.chars.slice(0, this.$data.charCount),
-          this.$data.monsters.slice(0, this.$data.monsterCount),
+          this.chars.slice(0, this.charCount),
+          this.monsters.slice(0, this.monsterCount),
         );
         message = `勝率: ${Math.round(winRate * 100, 2) + '%'}`;
       } catch (error) {
@@ -108,7 +108,7 @@ const ModalForm = {
 
 export default {
   methods: {
-    showBattle() {
+    show() {
       this.$buefy.modal.open({
         parent: this,
         component: ModalForm,

@@ -8,8 +8,7 @@
 import PieChart from './PieChart.vue';
 
 export default {
-  components: {},
-  props: ['category', 'icon'],
+  props: ['category'],
   data: () => ({
     labels: [],
     chartData: [],
@@ -46,9 +45,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.is-padding {
-  padding: 0.375rem 1rem;
-}
-</style>

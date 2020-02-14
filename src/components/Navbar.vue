@@ -15,6 +15,7 @@
             size="is-small"
             icon-left="account-remove"
           ></b-button>
+          <Party />
           <Cook :foods="foods" />
           <Battle />
         </div>
@@ -71,6 +72,7 @@
 import Cook from './Cook.vue';
 import Battle from './Battle.vue';
 import Statistic from './Statistic.vue';
+import Party from './Party.vue';
 
 const icon = `<span class="icon is-small is-primary">
                 <i class="mdi mdi-link-variant"></i>
@@ -81,6 +83,7 @@ export default {
     Cook,
     Battle,
     Statistic,
+    Party,
   },
   data: () => ({
     foods: [],
