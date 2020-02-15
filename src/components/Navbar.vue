@@ -40,6 +40,24 @@
       <b-navbar-item>
         <b-dropdown hoverable aria-role="list">
           <button class="button is-primary tag" slot="trigger">
+            <span>圖鑑</span>
+            <b-icon icon="menu-down"></b-icon>
+          </button>
+
+          <b-dropdown-item
+            aria-role="listitem"
+            :href="link.link"
+            target="_blank"
+            v-for="(link, index) in handbooks"
+            :key="index"
+          >
+            {{ link.name }}
+          </b-dropdown-item>
+        </b-dropdown>
+      </b-navbar-item>
+      <b-navbar-item>
+        <b-dropdown hoverable aria-role="list">
+          <button class="button is-primary tag" slot="trigger">
             <span>連結</span>
             <b-icon icon="menu-down"></b-icon>
           </button>
@@ -95,6 +113,11 @@ export default {
       { name: '鑑定噗', link: 'https://www.plurk.com/p/norn6m' },
       { name: '地下城二三事', link: 'https://www.plurk.com/p/nojfla' },
       {
+        name: '戰鬥教學',
+        link:
+          'https://docs.google.com/document/d/1tNUQxQw2V_Hh76NRGGio0HKTPXWQyzGAzrjx6JGJXB4/edit',
+      },
+      {
         name: '報名名單',
         link:
           'https://docs.google.com/spreadsheets/d/1F1lY69prHMCPtEYIuH2TZP7EP41_f-uyNpGW0NP5AAg/edit#gid=0',
@@ -111,6 +134,23 @@ export default {
           'https://docs.google.com/spreadsheets/d/1xjGjAFDLLsjFapYId4AOWm95vqdB2lflTEfPabkcXQA/edit#gid=720573555',
       },
       { name: '玩家資源', link: 'https://www.plurk.com/p/nomukf' },
+    ],
+    handbooks: [
+      {
+        name: '怪物',
+        link:
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vSYayjZCWCLraxf_NpmTR5q6ff5j6pjE0zmzo8iqHRklWq9L--8xoBCiuvsMBNUHQtX4dwUSdd0ngH2/pubhtml?gid=765368756&single=true',
+      },
+      {
+        name: '素材',
+        link:
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVFBEglpAusAEZ7MF4uHn-OiTMhqg2Ou25XEkqQcVbfxwN8akoOPg7C_xyblNYpMyi_rtXQrN3Nskm/pubhtml',
+      },
+      {
+        name: '食材',
+        link:
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBt1LNEEvUHwoGb6E3w0_QvnQ-76L_ixrIX1igoY8_MFi53-ji0VinnWXjTz36-oKq3ZTdh1ljYLE/pubhtml',
+      },
     ],
   }),
   methods: {
