@@ -1,35 +1,8 @@
-# ddy
+# DungeonsDelicacy Rank
 
-## Project setup
+> DungeonsDelicacy is a plurk project hold by [@DungeonsDelicacy](https://www.plurk.com/DungeonsDelicacy) in Plurk.  
+> And this unofficial rank list is maintained by @sheiun.
 
-```bash
-yarn install
-```
+## Contribute
 
-### Compiles and hot-reloads for development
-
-```bash
-yarn serve
-```
-
-### Compiles and minifies for production
-
-```bash
-yarn build
-```
-
-### Lints and fixes files
-
-```bash
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Deploy to gh-pages
-
-```bash
-yarn deploy
-```
+See [CONTRIBUTING](CONTRIBUTING.md) for more information.
