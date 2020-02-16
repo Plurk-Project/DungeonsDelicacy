@@ -6,3 +6,7 @@
 ## Contribute
 
 See [CONTRIBUTING](CONTRIBUTING.md) for more information.
+
+## Thanks
+
+Default avatar by Stephanie Edwards from [Pixabay](https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/)

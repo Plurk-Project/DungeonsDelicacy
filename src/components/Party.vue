@@ -10,6 +10,7 @@
 <script>
 import RadarChart from './RadarChart.vue';
 import { battleAttrs, lifeAttrs, weaponAttack } from '../lib/data';
+import { renderEasyCard } from '../lib/render';
 
 const TextForm = {
   props: ['chars'],
@@ -50,11 +51,11 @@ const TextForm = {
   template: `
   <div class="modal-card" style="width: auto;">
     <section class="modal-card-body">
-      <div class="level" v-for="(text, index) in texts">
+      <div class="level" v-for="(text, index) in texts" :key="index">
         <div>
           <pre>{{ text }}</pre>
         </div>
-        <div class="level-right">
+        <div class="level-right is-padding">
           <b-button
             icon-left="clipboard-text"
             class="button is-primary"
@@ -63,6 +64,42 @@ const TextForm = {
             v-clipboard:error="onError"
             >
             複製
+          </b-button>
+        </div>
+      </div>
+    </section>
+  </div>`,
+};
+
+const EasyCardForm = {
+  props: ['chars'],
+  mounted() {
+    this.$props.chars.forEach((char, index) => {
+      const canvas = document.getElementById(`canvas${index}`);
+      renderEasyCard(canvas, char);
+    });
+  },
+  methods: {
+    openInNewTab(index) {
+      const canvasDataUrl = document
+        .getElementById(`canvas${index}`)
+        .toDataURL('image/png');
+      const win = window.open(canvasDataUrl, '_blank');
+      win.focus();
+    },
+  },
+  template: `
+    <div class="modal-card" style="width: auto;">
+    <section class="modal-card-body">
+      <div class="level" v-for="(char, index) in chars" :key="index">
+        <canvas :id="'canvas' + index" ></canvas>
+        <div class="level-right is-padding">
+          <b-button
+            icon-left="image-search"
+            class="button is-primary"
+            @click="openInNewTab(index)"
+            >
+            開啟
           </b-button>
         </div>
       </div>
@@ -127,6 +164,34 @@ const ModalForm = {
         trapFocus: true,
       });
     },
+    showEasyCard() {
+      const selectedChars = this.getSelectedChars();
+      if (!selectedChars) return;
+
+      // selectedChars.map((char) => {
+      //   // TODO: await
+      //   this.$buefy.dialog.prompt({
+      //     message: `頭像連結`,
+      //     inputAttrs: {
+      //       placeholder: 'e.g. https://i.imgur.com/xyz.png',
+      //     },
+      //     trapFocus: true,
+      //     onConfirm: (value) =>
+      //       this.$buefy.toast.open(`Your name is: ${value}`),
+      //     onCancel: () => {},
+      //   });
+      // });
+
+      this.$buefy.modal.open({
+        parent: this,
+        props: {
+          chars: selectedChars,
+        },
+        component: EasyCardForm,
+        hasModalCard: true,
+        trapFocus: true,
+      });
+    },
   },
   template: `
   <div class="modal-card" style="width: auto;">
@@ -158,6 +223,9 @@ const ModalForm = {
       </b-button>
       <b-button icon-left="clipboard-text" class="button is-primary" @click="showText()">
         文
+      </b-button>
+      <b-button icon-left="text" class="button is-primary" @click="showEasyCard()">
+        簡易卡
       </b-button>
     </footer>
   </div>
