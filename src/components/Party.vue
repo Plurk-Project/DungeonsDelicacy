@@ -165,32 +165,43 @@ const ModalForm = {
       });
     },
     showEasyCard() {
-      const selectedChars = this.getSelectedChars();
+      let selectedChars = this.getSelectedChars();
       if (!selectedChars) return;
 
-      // selectedChars.map((char) => {
-      //   // TODO: await
-      //   this.$buefy.dialog.prompt({
-      //     message: `頭像連結`,
-      //     inputAttrs: {
-      //       placeholder: 'e.g. https://i.imgur.com/xyz.png',
-      //     },
-      //     trapFocus: true,
-      //     onConfirm: (value) =>
-      //       this.$buefy.toast.open(`Your name is: ${value}`),
-      //     onCancel: () => {},
-      //   });
-      // });
-
-      this.$buefy.modal.open({
-        parent: this,
-        props: {
-          chars: selectedChars,
+      // get avatars
+      const loading = this.open();
+      fetch(
+        'https://script.google.com/macros/s/AKfycbz0-bRaYcnNtxp0iJZJyhcWaW7088toGKvfAsXQ4nw0eyiEp7M/exec',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            plurks: selectedChars.map((char) => char.噗浪),
+          }),
         },
-        component: EasyCardForm,
-        hasModalCard: true,
-        trapFocus: true,
-      });
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          selectedChars = selectedChars.map((char) => {
+            char.avatar = json.data.find((obj) => obj.噗浪 == char.噗浪).avatar;
+            return char;
+          });
+        })
+        .then(() => {
+          loading.close();
+          this.$buefy.modal.open({
+            parent: this,
+            props: {
+              chars: selectedChars,
+            },
+            component: EasyCardForm,
+            hasModalCard: true,
+            trapFocus: true,
+          });
+        });
+    },
+    open() {
+      const loadingComponent = this.$buefy.loading.open();
+      return loadingComponent;
     },
   },
   template: `
@@ -224,9 +235,11 @@ const ModalForm = {
       <b-button icon-left="clipboard-text" class="button is-primary" @click="showText()">
         文
       </b-button>
-      <b-button icon-left="text" class="button is-primary" @click="showEasyCard()">
+      <b-tooltip label="格式由亞那邦黛兒中提供" type="is-light">
+        <b-button icon-left="text" class="button is-primary" @click="showEasyCard()">
         簡易卡
-      </b-button>
+        </b-button>
+      </b-tooltip>
     </footer>
   </div>
   `,

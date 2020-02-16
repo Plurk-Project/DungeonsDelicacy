@@ -33,7 +33,7 @@ function drawAvatar() {
 
 function drawChar(ctx, char) {
   for (let [key, value] of Object.entries(char)) {
-    if (Object.keys(position).includes(key)) {
+    if (Object.keys(position).includes(key) && key != 'avatar') {
       drawAttr(ctx, { name: key, value });
     }
   }
@@ -57,6 +57,7 @@ function drawAttr(ctx, attr) {
       ctx.fillStyle = 'RoyalBlue';
     }
   }
+  if (typeof attr.value == 'string') attr.value = attr.value.trim();
 
   ctx.fillText(attr.value, ...position[attr.name]);
 }
@@ -83,10 +84,11 @@ export function renderEasyCard(
   image.src = require('@/assets/easy-card.png');
 
   const avatar = new Image();
+  avatar.crossOrigin = 'Anonymous';
   avatar.ctx = ctx;
   avatar.onload = drawAvatar;
   if (char.avatar) {
-    avatarSrc = char.avatar;
+    avatarSrc = 'https://cors-anywhere.herokuapp.com/' + char.avatar;
   }
   avatar.src = avatarSrc;
 }
