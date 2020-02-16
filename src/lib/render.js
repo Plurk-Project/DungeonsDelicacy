@@ -51,7 +51,7 @@ function drawAttr(ctx, attr) {
 
   ctx.fillStyle = 'black';
   if (lifeAttrs.includes(attr.name)) {
-    if (attr.value >= 4) {
+    if (attr.value >= 3) {
       ctx.fillStyle = 'DarkOrange';
     } else if (attr.value >= 1) {
       ctx.fillStyle = 'RoyalBlue';
