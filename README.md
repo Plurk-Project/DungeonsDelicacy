@@ -10,3 +10,4 @@ See [CONTRIBUTING](CONTRIBUTING.md) for more information.
 ## Thanks
 
 Default avatar by Stephanie Edwards from [Pixabay](https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/)
+[亞那邦黛兒](https://www.plurk.com/lilinimueh) for EasyCard format
