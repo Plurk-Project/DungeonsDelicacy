@@ -235,9 +235,9 @@ const ModalForm = {
       <b-button icon-left="clipboard-text" class="button is-primary" @click="showText()">
         文
       </b-button>
-      <b-tooltip label="格式由亞那邦黛兒中提供" type="is-light">
+      <b-tooltip label="格式由亞那邦黛兒中提供" type="is-light" animated>
         <b-button icon-left="text" class="button is-primary" @click="showEasyCard()">
-        簡易卡
+          簡易卡
         </b-button>
       </b-tooltip>
     </footer>
