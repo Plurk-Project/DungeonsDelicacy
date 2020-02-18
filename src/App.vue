@@ -27,7 +27,8 @@ export default {
     )
       .then((res) => res.json())
       .then((res) => {
-        let message = '每 2 小時自動更新一次';
+        let message =
+          '由於官方更新新版角卡 排行榜將在下個本開放後修改成新的格式 若有不便請見諒 QQ'; // '每 2 小時自動更新一次';
         let type = 'is-info';
         if (res.msg == 'ok') {
           this.$store.commit('setChars', { data: res.data });
