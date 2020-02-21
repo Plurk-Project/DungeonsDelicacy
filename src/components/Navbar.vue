@@ -118,20 +118,14 @@ export default {
           'https://docs.google.com/document/d/1tNUQxQw2V_Hh76NRGGio0HKTPXWQyzGAzrjx6JGJXB4/edit',
       },
       {
-        name: '報名名單',
+        name: '報名列表',
         link:
           'https://docs.google.com/spreadsheets/d/1F1lY69prHMCPtEYIuH2TZP7EP41_f-uyNpGW0NP5AAg/edit#gid=0',
       },
       { name: '常見問題', link: 'https://www.plurk.com/p/noo6aw' },
       {
-        name: 'Q&A 提問',
-        link:
-          'https://docs.google.com/forms/d/1k83C8vs3mAuXvafc8Fr9lDNubi9hqwIzeIVn859DSRU/viewform?edit_requested=true',
-      },
-      {
-        name: 'Q&A 回應',
-        link:
-          'https://docs.google.com/spreadsheets/d/1xjGjAFDLLsjFapYId4AOWm95vqdB2lflTEfPabkcXQA/edit#gid=720573555',
+        name: 'Q&A',
+        link: 'https://www.dungeonsdelicacy.com/forum/you-xi-q-a',
       },
       { name: '玩家資源', link: 'https://www.plurk.com/p/nomukf' },
     ],

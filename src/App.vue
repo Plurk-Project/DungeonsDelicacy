@@ -60,7 +60,7 @@ export default {
 
 $primary: #654236;
 $primary-invert: findColorInvert($primary);
-$twitter: #4099ff;
+$twitter: #0a7d98;
 $twitter-invert: findColorInvert($twitter);
 
 $colors: (
