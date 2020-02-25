@@ -150,13 +150,13 @@ export default {
   methods: {
     showBrokenChars() {
       const chars = this.$store.getters.brokenChars;
-      let message = `<span>第一頁一定要是 <strong>基本資料</strong><br />任何破壞格式的行為都視為格式不符</span>`;
+      let message = `<span>短網址會導致程式抓取失敗 將在未來進行手動修正<br />尚未更新成<strong>新角卡</strong>的玩家將不顯示在此</span>`;
       message += `<br />`;
       message += `<div class="list">${chars
         .map(this.charListWrapper)
         .join('')}</div>`;
       this.$buefy.dialog.alert({
-        title: '角卡不符或不全或沒權限',
+        title: '沒權限或為短網址',
         message,
       });
     },

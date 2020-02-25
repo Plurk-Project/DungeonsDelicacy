@@ -27,13 +27,9 @@ export default new Vuex.Store({
     setChars(state, { data }) {
       const header = data.shift();
 
-      let filteredData = data.filter((list) =>
-        list.every((x) => {
-          return (!isNaN(parseInt(x)) || Boolean(x)) && x != 'undefined';
-        }),
-      );
+      let filteredData = data.filter((list) => list[0] == '正常');
 
-      const brokenCharsData = data.filter((list) => list[0] == '異常');
+      const brokenCharsData = data.filter((list) => list[0] == '#REF!');
       const brokenChars = brokenCharsData.map((list) => {
         let char = {};
         for (let i = 0; i < header.length; i++) {
