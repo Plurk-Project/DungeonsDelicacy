@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "node script/index.js && vue-cli-service build",
+    "build": "node script/index.js && vue-cli-service build && echo 'ddy.sheiun.me' > dist/CNAME",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
   },
