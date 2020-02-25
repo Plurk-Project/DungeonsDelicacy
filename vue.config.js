@@ -24,7 +24,5 @@ module.exports = {
       swSrc: 'service-worker.js',
     },
   },
-  publicPath:
-    process.env.NODE_ENV === 'production' ? '/DungeonsDelicacy/' : '/',
   runtimeCompiler: true,
 };
