@@ -74,7 +74,7 @@
         </b-dropdown>
       </b-navbar-item>
       <b-navbar-item
-        href="https://github.com/sheiun/DungeonsDelicacy"
+        href="https://github.com/Plurk-Project/DungeonsDelicacy"
         target="_blank"
       >
         <b-taglist attached>
@@ -92,6 +92,8 @@ import Battle from './Battle.vue';
 import Statistic from './Statistic.vue';
 import Party from './Party.vue';
 
+import { attrs } from '../lib/data';
+
 const icon = `<span class="icon is-small is-primary">
                 <i class="mdi mdi-link-variant"></i>
               </span>`;
@@ -105,7 +107,17 @@ export default {
   },
   data: () => ({
     foods: [],
-    statistics: ['性別', '武器', '種族', '信仰', '陣營'],
+    statistics: [
+      { name: '階級', type: 'PieChart' },
+      { name: '性別', type: 'PieChart' },
+      { name: '武器', type: 'PieChart' },
+      { name: '種族', type: 'PieChart' },
+      { name: '信仰', type: 'PieChart' },
+      { name: '陣營', type: 'PieChart' },
+      { name: '公會', type: 'PieChart' },
+      { name: '進階公會', type: 'PieChart' },
+      ...attrs.map((attr) => ({ name: attr, type: 'BarChart' })),
+    ],
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },

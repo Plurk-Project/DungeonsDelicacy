@@ -16,7 +16,10 @@
         </span>
         <br />
         <span>
-          <a href="https://github.com/sheiun/DungeonsDelicacy" target="_blank">
+          <a
+            href="https://github.com/Plurk-Project/DungeonsDelicacy"
+            target="_blank"
+          >
             <strong>原始碼</strong>
           </a>
           採用
