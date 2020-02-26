@@ -12,6 +12,10 @@ import RadarChart from './RadarChart.vue';
 import { battleAttrs, lifeAttrs, weaponAttack } from '../lib/data';
 import { renderEasyCard } from '../lib/render';
 
+const icon = `<span class="icon is-small is-primary">
+                <i class="mdi mdi-link-variant"></i>
+              </span>`;
+
 const TextForm = {
   props: ['chars'],
   data: () => ({
@@ -214,18 +218,25 @@ const ModalForm = {
         <b-numberinput v-model="playerCount" min="1" max="6"></b-numberinput>
       </b-field>
       <b-field :label="'隊員 ' + n" v-for="(n, index) in playerCount" :key="index">
-        <b-autocomplete
-          v-model="names[index]"
-          :data="filteredChars"
-          icon="account"
-          placeholder="這裡可以打字"
-          field="名稱"
-          @focus="focusIndex = index"
-          open-on-focus
-          @select="(option) => (selecteds[index] = option)"
-        >
-          <template slot="empty">找不到角色</template>
-        </b-autocomplete>
+        <div class="level">
+          <div class="level-left">
+            <b-autocomplete
+              v-model="names[index]"
+              :data="filteredChars"
+              icon="account"
+              placeholder="這裡可以打字"
+              field="名稱"
+              @focus="focusIndex = index"
+              open-on-focus
+              @select="(option) => (selecteds[index] = option)"
+            >
+              <template slot="empty">找不到角色</template>
+            </b-autocomplete>
+          </div>
+          <div class="level-right">
+            <a v-if="selecteds[index]" :href="selecteds[index].角卡" target="_blank">${icon}</a>
+          </div>
+        </div>
       </b-field>
     </section>
     <footer class="modal-card-foot">
