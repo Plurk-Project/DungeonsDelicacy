@@ -56,10 +56,9 @@ export default {
     getChartData(xs, key, groupSize = 10) {
       let max = Math.max(...xs.map((x) => x[key]).filter(Number.isInteger));
       let min = Math.min(...xs.map((x) => x[key]).filter(Number.isInteger));
-      console.log(xs);
-      console.log(key);
+
       let labels = [];
-      let chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      let chartData = Array(groupSize).fill(0);
 
       let interval = Math.ceil((max - min) / groupSize);
       // get labels
