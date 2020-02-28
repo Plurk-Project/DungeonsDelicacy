@@ -23,6 +23,23 @@
       <b-navbar-item>
         <b-dropdown hoverable aria-role="list">
           <button class="button is-primary tag" slot="trigger">
+            <span>分佈</span>
+            <b-icon icon="menu-down"></b-icon>
+          </button>
+
+          <b-dropdown-item
+            paddingless
+            aria-role="listitem"
+            v-for="(category, index) in distributions"
+            :key="index"
+          >
+            <Statistic :category="category" />
+          </b-dropdown-item>
+        </b-dropdown>
+      </b-navbar-item>
+      <b-navbar-item>
+        <b-dropdown hoverable aria-role="list">
+          <button class="button is-primary tag" slot="trigger">
             <span>統計</span>
             <b-icon icon="menu-down"></b-icon>
           </button>
@@ -92,7 +109,7 @@ import Battle from './Battle.vue';
 import Statistic from './Statistic.vue';
 import Party from './Party.vue';
 
-import { attrs } from '../lib/data';
+import { personalAttrs } from '../lib/data';
 
 const icon = `<span class="icon is-small is-primary">
                 <i class="mdi mdi-link-variant"></i>
@@ -107,6 +124,10 @@ export default {
   },
   data: () => ({
     foods: [],
+    distributions: [
+      { name: '戰鬥', type: 'BarChart' },
+      { name: '生活', type: 'BarChart' },
+    ],
     statistics: [
       { name: '階級', type: 'PieChart' },
       { name: '性別', type: 'PieChart' },
@@ -116,7 +137,7 @@ export default {
       { name: '陣營', type: 'PieChart' },
       { name: '公會', type: 'PieChart' },
       { name: '進階公會', type: 'PieChart' },
-      ...attrs.map((attr) => ({ name: attr, type: 'BarChart' })),
+      ...personalAttrs.map((attr) => ({ name: attr, type: 'BarChart' })),
     ],
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
@@ -136,7 +157,7 @@ export default {
       },
       { name: '常見問題', link: 'https://www.plurk.com/p/noo6aw' },
       {
-        name: 'Q&A',
+        name: '新 Q&A',
         link: 'https://www.dungeonsdelicacy.com/forum/you-xi-q-a',
       },
       { name: '玩家資源', link: 'https://www.plurk.com/p/nomukf' },
