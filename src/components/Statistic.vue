@@ -78,11 +78,11 @@ export default {
       return dataset;
     },
     getMax(chars, attrs) {
-      return (max = Math.max(
+      return Math.max(
         ...attrs.map((attr) =>
           Math.max(...chars.map((x) => x[attr]).filter(Number)),
         ),
-      ));
+      );
     },
     getLabels(chars, key) {
       let labels = [];
