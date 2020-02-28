@@ -1,11 +1,9 @@
 <template>
   <div>
-    <section>
-      <b-tabs v-model="activeTab" position="is-centered">
-        <b-tab-item v-for="tab in tabs" :key="tab" :label="tab"> </b-tab-item>
-      </b-tabs>
-    </section>
-    <div class="container">
+    <b-tabs v-model="activeTab" position="is-centered" class="is-marginless">
+      <b-tab-item v-for="tab in tabs" :key="tab" :label="tab"> </b-tab-item>
+    </b-tabs>
+    <div class="is-padding">
       <div class="columns is-centered">
         <div class="column is-half">
           <Table :tab="getActiveTabName()" />
