@@ -24,7 +24,7 @@ export default new Vuex.Store({
      *
      * @param {Array} data from spreadsheet
      */
-    setChars(state, { data }) {
+    setChars(_state, { data }) {
       const header = data.shift();
 
       let filteredData = data.filter((list) => list[0] == '正常');
