@@ -1,8 +1,8 @@
-importScripts("/precache-manifest.9f4aae74aa05d8630d0459d614ea5f32.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.42befdd85046adf3e0afcaa26d0716db.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'd4' });
 
-const LATEST_VERSION = '2.2.2';
+const LATEST_VERSION = '2.2.3';
 
 self.addEventListener('activate', (event) => {
   console.log(`%c ${LATEST_VERSION} `, 'background: #ddd; color: #0000ff');
