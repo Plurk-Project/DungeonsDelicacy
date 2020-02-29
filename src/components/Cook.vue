@@ -57,8 +57,7 @@ export default {
   }),
   methods: {
     open() {
-      const loadingComponent = this.$buefy.loading.open();
-      return loadingComponent;
+      return this.$buefy.loading.open();
     },
 
     show() {

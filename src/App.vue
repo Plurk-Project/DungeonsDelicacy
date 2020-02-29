@@ -20,7 +20,7 @@ export default {
     Footer,
   },
   beforeMount() {
-    const loading = this.open();
+    const loading = this.$buefy.loading.open();
     fetch(
       'https://script.google.com/macros/s/AKfycbzbmSK_x_cGD7QonZ-yj5USYb-XrP8RR4RVwGXdOK8G1yX_52E/exec',
       { method: 'POST', body: JSON.stringify({ token: 'gogoddy' }) },
@@ -44,12 +44,6 @@ export default {
           type,
         });
       });
-  },
-  methods: {
-    open() {
-      const loadingComponent = this.$buefy.loading.open();
-      return loadingComponent;
-    },
   },
 };
 </script>

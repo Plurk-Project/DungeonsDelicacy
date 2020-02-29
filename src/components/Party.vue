@@ -204,8 +204,7 @@ const ModalForm = {
         });
     },
     open() {
-      const loadingComponent = this.$buefy.loading.open();
-      return loadingComponent;
+      return this.$buefy.loading.open();
     },
   },
   template: `
