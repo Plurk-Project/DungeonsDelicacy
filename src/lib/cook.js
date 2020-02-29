@@ -1,17 +1,16 @@
-export const cook = (level = 1, hard = 1, exp = '50/80') => {
-  let raw = Number(exp.split('/')[0]);
-  let rate = prob(cook2dice(level), hard);
-  let successExp = getCookBonus(level) * Number(exp.split('/')[1]);
-  let cooked = rate * successExp;
+export const cook = (level = 1, hard = 1, raw = 50, cooked = 80) => {
+  let successRate = prob(cook2dice(level), hard);
+  let successExp = getCookBonus(level) * cooked;
+  let cookExp = successRate * successExp;
   let messages = [];
   messages.push('料理等級: ' + level);
   messages.push('料理難度: ' + hard);
-  messages.push('生吃/料理: ' + exp);
-  messages.push('料理期望值: ' + cooked);
+  messages.push('生吃 / 料理: ' + raw + ' / ' + cooked);
+  messages.push('料理期望值: ' + cookExp);
   messages.push('料理經驗值: ' + successExp);
-  messages.push('料理成功率: ' + parseInt(rate * 100) + '%');
-  if (raw > cooked) messages.push('建議: 生吃');
-  else if (raw < cooked) messages.push('建議: 熟食');
+  messages.push('料理成功率: ' + parseInt(successRate * 100) + '%');
+  if (raw > cookExp) messages.push('建議: 生吃');
+  else if (raw < cookExp) messages.push('建議: 熟食');
   else messages.push('建議: 都行');
   return messages.join('<br />');
 };

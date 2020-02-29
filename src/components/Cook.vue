@@ -35,7 +35,7 @@ const ModalForm = {
           required
         >
           <option v-for="(food, index) in foods" :value="index" :key="index">
-            {{ food.name }}｜{{ food.hard }}｜ {{ food.exp }}
+            {{ food.name }}｜{{ food.hard }}｜ {{ food.raw }} / {{ food.cooked }}
           </option>
         </b-select>
       </b-field>
@@ -89,7 +89,7 @@ export default {
     },
     fetchAllFoods() {
       return fetch(
-        `https://script.google.com/macros/s/AKfycby46PNdUSQNTidw0bktB9xd0II-MG4rK03kPHvnFlkUFTx_ek8/exec`,
+        `https://script.google.com/macros/s/AKfycbz9Wdl3svakmlVhDPCeoPvLbb0GGDP3d41zcKcM8mNntgJW44t3/exec`,
       )
         .then((res) => res.json())
         .then((obj) => {
@@ -100,7 +100,7 @@ export default {
     showCook(level, food) {
       this.$buefy.dialog.alert({
         title: '占卜結果',
-        message: cook(level, food.hard, food.exp),
+        message: cook(level, food.hard, food.raw, food.cooked),
         confirmText: '讚',
       });
     },
