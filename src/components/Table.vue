@@ -43,32 +43,19 @@ export default {
     tab: {
       immediate: true,
       handler(newVal, oldVal) {
-        let delay = 1000;
-        if (oldVal === undefined) {
-          delay = 3000;
-        }
-        const loading = this.open();
+        const loading = this.$buefy.loading.open();
         setTimeout(() => {
-          if (oldVal != undefined) {
+          if (oldVal !== undefined) {
             let oldColumnIndex = this.tabs.indexOf(oldVal) + 2;
             this.columns[oldColumnIndex].visible = false;
-          }
-
-          let chars = this.getFilteredChars(newVal);
-          if (chars.length != 0) {
-            delay = 100;
           }
 
           let columnIndex = this.tabs.indexOf(newVal) + 2;
           this.columns[columnIndex].visible = true;
           this.currentPage = 1;
 
-          setTimeout(() => {
-            if (chars.length == 0) chars = this.getFilteredChars(newVal);
-            this.currentChars = chars;
-            loading.close();
-          }, delay);
-        }, delay);
+          this.untilGetFilteredChars(newVal, loading);
+        }, 100);
       },
     },
   },
@@ -90,9 +77,15 @@ export default {
       }
       return chars;
     },
-    open() {
-      const loadingComponent = this.$buefy.loading.open();
-      return loadingComponent;
+    untilGetFilteredChars(val, loading) {
+      setTimeout(() => {
+        let chars = this.getFilteredChars(val);
+        if (chars.length !== 0) {
+          this.currentChars = chars;
+          return loading.close();
+        }
+        this.untilGetFilteredChars(val, loading);
+      }, 500);
     },
   },
 };
