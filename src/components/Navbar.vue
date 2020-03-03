@@ -121,8 +121,10 @@ export default {
     links: [
       { name: '官方網站', link: 'https://www.dungeonsdelicacy.com/' },
       { name: '官方噗浪', link: 'https://www.plurk.com/DungeonsDelicacy' },
-      { name: '鍛造噗', link: 'https://www.plurk.com/p/noqcmc' },
-      { name: '鑑定噗', link: 'https://www.plurk.com/p/norn6m' },
+      { name: '鍛造噗 I', link: 'https://www.plurk.com/p/noqcmc' },
+      { name: '鍛造噗 II', link: 'https://www.plurk.com/p/npq78c' },
+      { name: '鑑定噗 I', link: 'https://www.plurk.com/p/norn6m' },
+      { name: '鑑定噗 II', link: 'https://www.plurk.com/p/npq73e' },
       { name: '地下城二三事', link: 'https://www.plurk.com/p/nojfla' },
       {
         name: '戰鬥教學',
@@ -136,8 +138,13 @@ export default {
       },
       { name: '常見問題', link: 'https://www.plurk.com/p/noo6aw' },
       {
-        name: 'Q&A',
+        name: '新 Q&A',
         link: 'https://www.dungeonsdelicacy.com/forum/you-xi-q-a',
+      },
+      {
+        name: '舊 Q&A',
+        link:
+          'https://docs.google.com/spreadsheets/d/1xjGjAFDLLsjFapYId4AOWm95vqdB2lflTEfPabkcXQA/edit#gid=720573555',
       },
       { name: '玩家資源', link: 'https://www.plurk.com/p/nomukf' },
     ],
