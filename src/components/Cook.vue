@@ -56,13 +56,9 @@ export default {
     foods: [],
   }),
   methods: {
-    open() {
-      return this.$buefy.loading.open();
-    },
-
     show() {
       if (this.foods.length == 0) {
-        const loading = this.open();
+        const loading = this.$buefy.loading.open();
         this.fetchAllFoods().then(() => {
           setTimeout(() => loading.close(), 100);
           this.showCookMenu();
