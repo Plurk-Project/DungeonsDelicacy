@@ -5,19 +5,21 @@
     </header>
     <section class="modal-card-body">
       <b-field label="物品欄數">
-        <b-numberinput v-model="columnCount" min="1" max="12"></b-numberinput>
+        <b-numberinput v-model="columnCount" min="1" max="20"></b-numberinput>
       </b-field>
       <b-field grouped v-for="(n, index) in columnCount" :key="'p' + index">
         <b-field>
           <b-autocomplete
             @select="(option) => (materialsChoosed[index] = option)"
-            :data="materials"
+            @focus="focusIndex = index"
+            :data="filteredMaterials"
+            v-model="names[index]"
             icon="food-apple"
             placeholder="選擇一個素材"
             field="name"
             open-on-focus
           >
-            <template slot="empty">找不素材</template>
+            <template slot="empty">找不到素材</template>
           </b-autocomplete>
         </b-field>
         <b-field>
@@ -44,11 +46,24 @@ import '../lib/util';
 
 export default {
   data: () => ({
+    focusIndex: 0,
     columnCount: 1,
+    names: Array.from({ length: 20 }, () => ''),
     materials: [],
-    materialsChoosed: [],
+    materialsChoosed: Array.from({ length: 20 }, () => null),
     materialsNumber: Array.from({ length: 20 }, () => 1),
   }),
+  computed: {
+    filteredMaterials() {
+      return this.materials.filter((material) => {
+        return (
+          material.name
+            .toLowerCase()
+            .indexOf(this.names[this.focusIndex].toLowerCase()) >= 0
+        );
+      });
+    },
+  },
   mounted() {
     const loading = this.$buefy.loading.open();
     // TODO:       if (this.materials.length == 0) { 優化 但要用 emit props 傳遞 materials
