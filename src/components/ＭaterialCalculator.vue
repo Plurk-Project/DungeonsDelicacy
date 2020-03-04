@@ -89,27 +89,51 @@ export default {
     showResult() {
       if (!this.checkAllSelected()) return;
       let message;
+      let copyMessage;
       let type = 'is-primary';
       try {
-        message = '【販售】<br />';
+        message = '【販售】\n';
         let total = 0;
         for (let i = 0; i < this.columnCount; i++) {
           let material = this.materialsChoosed[i];
           let number = this.materialsNumber[i];
           let sum = material.sold * number;
           total += sum;
-          message += `${material.name} x ${number} = ${sum}<br />`;
+          message += `${material.name} x ${number} = ${sum}\n`;
         }
         message += `共 ${total} 元`;
+        copyMessage = message;
+        message = `<pre>${message}</pre>`;
       } catch (error) {
         type = 'is-danger';
         message = `發生了一些錯誤 這個程式還在 Beta 版<br /><code>${error}</code>`;
       }
-      this.$buefy.dialog.alert({
+      this.$buefy.dialog.confirm({
         title: '計算結果',
         message,
         type,
-        confirmText: '讚',
+        cancelText: '關閉',
+        confirmText: '複製',
+        onConfirm: () => {
+          this.$copyText(copyMessage).then(
+            () => {
+              this.$buefy.snackbar.open({
+                duration: 3000,
+                message: `複製成功！`,
+                position: 'is-bottom',
+                type: 'is-success',
+              });
+            },
+            (error) => {
+              this.$buefy.snackbar.open({
+                duration: 3000,
+                message: `複製失敗！錯誤：${e}`,
+                position: 'is-bottom',
+                type: 'is-danger',
+              });
+            },
+          );
+        },
       });
     },
   },
