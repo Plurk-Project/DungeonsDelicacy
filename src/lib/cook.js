@@ -1,4 +1,6 @@
-export const cook = (level = 1, hard = 1, raw = 50, cooked = 80) => {
+export const cook = (level = 1, hard = 1, rawNcooked = '80/150') => {
+  let raw = rawNcooked.split('/')[0];
+  let cooked = rawNcooked.split('/')[1];
   let successRate = prob(cook2dice(level), hard);
   let successExp = getCookBonus(level) * cooked;
   let cookExp = successRate * successExp;
