@@ -208,15 +208,15 @@ const ModalForm = {
     },
   },
   template: `
-  <div class="modal-card" style="width: auto;">
+  <div class="modal-card is-overflow-visible" style="width: auto;">
     <header class="modal-card-head">
       <p class="modal-card-title">戰力分析</p>
     </header>
-    <section class="modal-card-body">
+    <section class="modal-card-body is-overflow-visible">
       <b-field label="成員人數">
         <b-numberinput v-model="playerCount" min="1" max="6"></b-numberinput>
       </b-field>
-      <b-field :label="'隊員 ' + n" v-for="(n, index) in playerCount" :key="index">
+      <b-field v-for="(n, index) in playerCount" :key="index">
         <div class="level">
           <div class="level-left">
             <b-autocomplete
@@ -253,6 +253,7 @@ const ModalForm = {
     </footer>
   </div>
   `,
+  style: ``,
 };
 
 export default {

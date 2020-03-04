@@ -1,9 +1,9 @@
 <template>
-  <div class="modal-card" style="width: auto">
+  <div class="modal-card is-overflow-visible" style="width: auto">
     <header class="modal-card-head">
       <p class="modal-card-title">素材售價計算機</p>
     </header>
-    <section class="modal-card-body">
+    <section class="modal-card-body is-overflow-visible">
       <b-field label="物品欄數">
         <b-numberinput v-model="columnCount" min="1" max="20"></b-numberinput>
       </b-field>

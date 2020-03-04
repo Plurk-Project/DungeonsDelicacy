@@ -114,12 +114,7 @@ $link-focus-border: $primary;
   padding: 0.375rem 1rem;
 }
 
-/* b-autocomplete in modal */
-.modal .animation-content .modal-card {
-  overflow: visible !important;
-}
-
-.modal-card-body {
+.is-overflow-visible {
   overflow: visible !important;
 }
 </style>
