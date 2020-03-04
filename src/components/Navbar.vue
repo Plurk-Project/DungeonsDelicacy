@@ -16,7 +16,8 @@
             icon-left="account-remove"
           ></b-button>
           <Party />
-          <Cook :foods="foods" />
+          <Cook />
+          <CalculatorButton />
           <Battle />
         </div>
       </b-navbar-item>
@@ -87,6 +88,7 @@
 </template>
 
 <script>
+import CalculatorButton from './CalculatorButton.vue';
 import Cook from './Cook.vue';
 import Battle from './Battle.vue';
 import Statistic from './Statistic.vue';
@@ -104,9 +106,9 @@ export default {
     Battle,
     Statistic,
     Party,
+    CalculatorButton,
   },
   data: () => ({
-    foods: [],
     statistics: [
       { name: '階級', type: 'PieChart' },
       { name: '性別', type: 'PieChart' },
