@@ -7,30 +7,26 @@
       <b-field label="物品欄數">
         <b-numberinput v-model="columnCount" min="1" max="20"></b-numberinput>
       </b-field>
-      <b-field grouped v-for="(n, index) in columnCount" :key="'p' + index">
-        <b-field>
-          <b-autocomplete
-            @select="(option) => (materialsChoosed[index] = option)"
-            @focus="focusIndex = index"
-            :data="filteredMaterials"
-            v-model="names[index]"
-            icon="food-apple"
-            placeholder="選擇一個素材"
-            field="name"
-            open-on-focus
-          >
-            <template slot="empty">找不到素材</template>
-          </b-autocomplete>
-        </b-field>
-        <b-field>
-          <b-numberinput
-            controls-position="compact"
-            controls-rounded
-            v-model="materialsNumber[index]"
-            min="1"
-            max="1000"
-          ></b-numberinput>
-        </b-field>
+      <b-field v-for="(n, index) in columnCount" :key="'p' + index">
+        <b-autocomplete
+          @select="(option) => (materialsChoosed[index] = option)"
+          @focus="focusIndex = index"
+          :data="filteredMaterials"
+          v-model="names[index]"
+          icon="food-apple"
+          placeholder="選擇一個素材"
+          field="name"
+          open-on-focus
+        >
+          <template slot="empty">找不到素材</template>
+        </b-autocomplete>
+
+        <b-numberinput
+          controls-position="compact"
+          v-model="materialsNumber[index]"
+          min="1"
+          max="1000"
+        ></b-numberinput>
       </b-field>
     </section>
     <footer class="modal-card-foot">
