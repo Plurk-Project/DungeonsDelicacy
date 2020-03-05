@@ -171,7 +171,7 @@ export default {
   methods: {
     showBrokenChars() {
       const chars = this.$store.getters.brokenChars;
-      let message = `<span>短網址會導致程式抓取失敗 將在未來進行手動修正<br />尚未更新成<strong>新角卡</strong>的玩家將不顯示在此</span>`;
+      let message = `<span>短網址會導致程式抓取失敗 將在未來進行手動修正<br />尚未更新成 <a href="https://docs.google.com/spreadsheets/d/1shNHSv7X1QPniaqAjxHfbhPNyIqmR9zEknd95YZGUmU/edit#gid=20454348">新角卡</a> 的玩家將不顯示在此<br />更新完要自行去 <a href="https://docs.google.com/forms/d/e/1FAIpQLSciD6lRMF2tTIKGHxjDm2RH_ind8z9mlo8iShBhfRVOCGLukw/viewform">官方回報<a/></span>`;
       message += `<br />`;
       message += `<div class="list">${chars
         .map(this.charListWrapper)
