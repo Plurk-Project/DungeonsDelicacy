@@ -166,6 +166,11 @@ export default {
         link:
           'https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBt1LNEEvUHwoGb6E3w0_QvnQ-76L_ixrIX1igoY8_MFi53-ji0VinnWXjTz36-oKq3ZTdh1ljYLE/pubhtml',
       },
+      {
+        name: '鑑定',
+        link:
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vSYayjZCWCLraxf_NpmTR5q6ff5j6pjE0zmzo8iqHRklWq9L--8xoBCiuvsMBNUHQtX4dwUSdd0ngH2/pubhtml?gid=1576196217&single=true',
+      },
     ],
   }),
   methods: {
