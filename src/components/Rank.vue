@@ -9,7 +9,7 @@
           href="https://www.dungeonsdelicacy.com/forum/mei-shi-zhuo-jin/jian-ding-pu-9-deng"
           target="_blank"
         >
-          【廣告】美食桌巾 - 艾斯·克林姆 9 級鑑定舖
+          【廣告】美食桌巾 - 艾斯·克林姆 11 級鑑定舖
         </a>
       </b-tooltip>
     </div>
